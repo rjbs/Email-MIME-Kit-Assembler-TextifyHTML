@@ -76,7 +76,6 @@ around assemble => sub {
   my $local_arg = { %$arg };
 
   for my $key (@{ $self->html_args }) {
-    warn "checking on $key\n";
     next unless defined $local_arg->{ $key };
     $local_arg->{ $key } = $self->formatter->parse($local_arg->{ $key });
   }
