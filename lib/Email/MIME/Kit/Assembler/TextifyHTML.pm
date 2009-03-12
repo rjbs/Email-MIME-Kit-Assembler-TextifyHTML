@@ -1,6 +1,41 @@
 package Email::MIME::Kit::Assembler::TextifyHTML;
 use Moose;
 extends 'Email::MIME::Kit::Assembler::Standard';
+# ABSTRACT: textify some HTML arguments to assembly
+
+=head1 SYNOPSIS
+
+In your F<manifest.yaml>:
+
+  alteratives:
+  - type: text/plain
+    path: body.txt
+    assembler:
+    - TextifyHTML
+    - html_args: [ body ]
+  - type: text/html
+    path: body.html
+
+Then:
+
+  my $email = $kit->assemble({
+    body => '<div><p> ... </p></div>',
+  });
+
+The C<body> argument will be rendered intact in the the HTML part, but will
+converted to plaintext before the plaintext part is rendered.
+
+This will be done by
+L<HTML::FormatText::WithLinks|HTML::FormatText::WithLinks>, using the arguments
+provided in the C<formatter_args> assembler attribute.
+
+=head1 BY THE WAY
+
+There will probably exist a TextifyHTML renderer, someday, which will first
+render the part with the parent part's renderer, and then convert the produced
+HTML to text.  This would allow you to use one template for both HTML and text.
+
+=cut
 
 use HTML::FormatText::WithLinks;
 
