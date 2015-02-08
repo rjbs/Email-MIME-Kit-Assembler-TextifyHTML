@@ -17,8 +17,8 @@ my $email = $kit->assemble({
 my ($text, $html) = $email->subparts;
 
 like(
-  $text->body,
-  qr{\n  \* 10 dunks\n},
+  $text->body_str,
+  qr{\x0d\x0a  \* 10 dunks\x0d\x0a},
   "text part includes html converted to text",
 );
 

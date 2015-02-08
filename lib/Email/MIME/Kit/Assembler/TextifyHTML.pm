@@ -1,7 +1,8 @@
 package Email::MIME::Kit::Assembler::TextifyHTML;
+# ABSTRACT: textify some HTML arguments to assembly
+
 use Moose;
 extends 'Email::MIME::Kit::Assembler::Standard';
-# ABSTRACT: textify some HTML arguments to assembly
 
 =head1 SYNOPSIS
 
