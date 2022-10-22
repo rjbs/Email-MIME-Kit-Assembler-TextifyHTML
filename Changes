@@ -1,6 +1,7 @@
 Revision history for Email-MIME-Kit-Assembler-TextifyHTML
 
 {{$NEXT}}
+        - update dist metadata
 
 1.003     2015-02-07 23:04:30-05:00 America/New_York
         - update tests to deal with correct line endings
