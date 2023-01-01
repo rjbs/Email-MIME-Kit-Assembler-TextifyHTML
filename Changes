@@ -1,6 +1,7 @@
 Revision history for Email-MIME-Kit-Assembler-TextifyHTML
 
 {{$NEXT}}
+        - update author contact info
 
 1.004     2022-10-22 16:23:46-04:00 America/New_York
         - update dist metadata
